@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CGPA Calculator</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="scripts/jspdf.min.js"></script>
+    <script src="https://unpkg.com/jspdf@latest/dist/jspdf.umd.min.js"></script>
+
+    <fieldset>
+        <legend><abbr title="Cumulative Grade Point Average">CGPA</abbr> Calculator</legend>
+        <div class="container">
+            <div class="studentInformation">
+            <div class="information">
+                <label>Univarsity</label>
+                <select id="univasityNameId">
+                    <option value="Jashore Univarsity of Science and Techonology">JUST</option>
+                    <option value="Univarsity of Dhaka">DU</option>
+                    <option value="Bangladesh Agricultural University">BAU</option>
+                    <option value="Bangladesh University of Engineering & Technology">BUET</option>
+                    <option value="Bangladesh Open University">BOU</option>
+                    <option value="Bangabandhu Sheikh Mujib Medical University">BSMMU</option>
+                    <option value="Bangabandhu Sheikh Mujibur Rahman Agricultural University">BSMRAU</option>
+                    <option value="Begum Rokeya University">BRU</option>
+                    <option value="Bangladesh University of Professionals">BUP</option>
+                    <option value="Bangabandhu Sheikh Mujibur Rahman Science & Technology University">BSMRSTU</option>
+                    <option value="Bangladesh University of Textiles">BUTex</option>
+                    <option value="Bangabandhu Sheikh Mujibur Rahman Maritime University">BSMRMU</option>
+                    <option value="Bangabandhu Sheikh Mujibur Rahman Digital University">BSMRDU</option>
+                    <option value="Bangamata Sheikh Fojilatunnesa Mujib Science and Technology University">BSFMSTU</option>
+                    <option value="Bangabandhu Sheikh Mujibur Rahman Aviation And Aerospace University">BSMRAAU</option>
+                    <option value="Bangabandhu Sheikh Mujibur Rahman Univerisity">BSMRU</option>
+                    <option value="Chittagong University of Engineering & Technology">CUET</option>
+                    <option value="Comilla University">CU</option>
+                    <option value="Chittagong Veterinary and Animal Sciences University">CVASU</option>
+                    <option value="Chittagong Medical University">CMU</option>
+                    <option value="Chandpur Science and Technology University">CSTU</option>
+                    <option value="Dhaka University of Engineering & Technology">DUET</option>
+                    <option value="Hajee Mohammad Danesh Science & Technology University">HMDSTU</option>
+                    <option value="Hobiganj Agricultural University">HAU</option>
+                    <option value="Islamic University">IU</option>
+                    <option value="Islamic Arabic University">IAU</option>
+                    <option value="Jahangirnagar University">JU</option>
+                    <option value="Jagannath University">JnU</option>
+                    <option value="Jatiya Kabi Kazi Nazrul Islam University">JKKNIU</option>
+                    <option value="Jessore University of Science & Technology">JUST</option>
+                    <option value="Khulna University">KU</option>
+                    <option value="Khulna University of Engineering and Technology">KUET</option>
+                    <option value="Khulna Agricultural University">KAU</option>
+                    <option value="JnU">Audi</option>
+                    <option value="JnU">Audi</option>
+                    <option value="JnU">Audi</option>
+                    <option value="JnU">Audi</option>
+                    <option value="JnU">Audi</option>
+                    <option value="JnU">Audi</option>
+                    <option value="JnU">Audi</option>
+                    <option value="JnU">Audi</option>
+                    <option value="JnU">Audi</option>
+                    <option value="JnU">Audi</option>
+                    <option value="JnU">Audi</option>
+                    <option value="JnU">Audi</option>
+                </select>
+            </div>
+            <div class="information">
+                <label>Name</label>
+                <input id="studentNameId" placeholder="Md. Sabbir Molla">
+            </div>
+            <div class="information">
+                <label>Department</label>
+                <select id="departmentId">
+                    <option value="Computer Science and Engineering">CSE</option>
+                    <option value="Accounting and Information Systems">AIS</option>
+                    <option value="Agro Product Processing Technology">APPT</option>
+                    <option value="Biomedical Engineering">BME</option>
+                    <option value="Chemical Engineering">ChE</option>
+                    <option value="Chemistry">Chemistry</option>
+                    <option value="Computer Science and Engineering">CSE</option>
+                    <option value="Climate and Disaster Management">CDM</option>
+                    <option value="English">English</option>
+                    <option value="Environmental Science and Technology">EST</option>
+                    <option value="Electrical and Electronic Engineering">EEE</option>
+                    <option value="Fisheries and Marine Bioscience">FMB</option>
+                    <option value="Finance and Banking">F'&'B</option>
+                    <option value="Genetic Engineering and Biotechnology">GEBT</option>
+                    <option value="Industrial and Production Engineering">IPE</option>
+                    <option value="Mathematics">MATH</option>
+                    <option value="Management">Management</option>
+                    <option value="Marketing">Marketing</option>
+                    <option value="Microbiology">Microbiology</option>
+                    <option value="Nutrition and Food Technology">NFT</option>
+                    <option value="Nursing and Health Science">NHS</option>
+                    <option value="Petroleum and Mining Engineering">PME</option>
+                    <option value="Pharmacy">Pharmacy</option>
+                    <option value="Physical Education and Sports Science">PESS</option>
+                    <option value="Physics">Physics</option>
+                    <option value="Physiotherapy and Rehabilitation">PR</option>
+                    <option value="Textile Engineering">TE</option>
+                </select>
+            </div>
+            <div class="information">
+                <label>Roll</label>
+                <input id="rollNoId" placeholder="170148">
+            </div>
+            <div class="information">
+                <label>Session</label>
+                <input id="sessionId" type="text" placeholder="2017-18">
+            </div>
+            <div class="information">
+                <label>Semester</label>
+                <select id="semesterId">
+                    <option value="1st year 1st semester">1st year 1st semester</option>
+                    <option value="1st year 2nd semester">1st year 2nd semester</option>
+                    <option value="2nd year 1st semester">2nd year 1st semester</option>
+                    <option value="2nd year 2nd semester">2nd year 2nd semester</option>
+                    <option value="3rd year 1st semester">3rd year 1st semester</option>
+                    <option value="3rd year 2nd semester">3rd year 2nd semester</option>
+                    <option value="4th year 1st semester">4th year 1st semester</option>
+                    <option value="4th year 2nd semester">4th year 2nd semester</option>
+                </select>
+            </div>
+
+
+        </div>
+        <hr>
+        
+        <div>
+            <input class="addButton" type="button" onclick="addFunction()" value="AddTextbox" />
+        </div>
+
+
+        <table id="textbox">
+            <tr>
+            </tr>
+            <tr>
+                <th><label id="courseTitleId1">Course Code</label></th>
+                <th><label id="creditId1">Credit</label></th>
+                <th><label id="earnCreditId1">Earn Point</label></th>
+                <th><label id="gradeId1" >Grade</label></th>
+            </tr>
+            <tr>
+                <td><input type="text" class="courseTitle" id="courseTitleId2" value = "CSE:1101" onclick='this.select()'></td>
+                <td><input type="text" class="credit" id="creditId2" step=".5" value = "3.00" onchange="cgpaCalculation()" onclick='this.select()'></td>
+                <td><input type="number" class="earnCredit" id="earnCreditId2" step=".25" value = "3.75" onchange="cgpaCalculation()" onclick='this.select()'></td>
+                <td><input type="text" class="score" id="gradeId2" value = "A" onchange="cgpaCalculation()" onclick='this.select()' readonly=""></td>
+            </tr>
+        </table>
+        <hr>
+        <section class="resultSection">
+            <div class="result">
+                <label>Total Credit</label>
+                <input type="text" id="totalCreditId" onclick="this.select()" placeholder="24.00" readonly>
+            </div>
+            
+            <div class="result">
+                <label>Total Earn Credit</label>
+                <input type="text" id="totalEarnCreditId" onclick="this.select()" placeholder="20.00" readonly>
+            </div>
+            
+            <div class="result">
+                <label>Total Score</label>
+                <input type="text" id="totalScoreId" onclick="this.select()" placeholder="24.00" readonly>
+            </div>
+            
+            <div class="result">
+                <label>CGPA</label>
+                <input type="text" id="cgpaId" onclick="this.select()" placeholder="3.50" readonly>
+            </div>
+        </section>
+        <div >
+            <input type="button" class="downloadButton" onclick="cgpaCalculationPdfDownload()" value="Download" />
+        </div>
+        </div>
+
+
+        <footer>
+            <div class="footer">
+                <p>Copyright © 2020 Sabbir | All Rights Reserved</p>
+            </div>
+        </footer>
+    </fieldset>
+
+    <script src="scripts/customScript.js"></script>
+    <script src="scripts/New%2520folder/demo.js"></script>
+</body>
+
+</html>

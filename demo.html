@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="scripts/jspdf.min.js"></script>
+
+    <fieldset>
+        <legend><abbr title="Cumulative Grade Point Average">CGPA</abbr> Calculator</legend>
+        <div class="studentInformation">
+            <div class="information">
+                <label>Univarsity</label>
+                <select id="cars">
+                    <option value="JUST">Jashore Univarsity of Science and Technology</option>
+                    <option value="DU">Saab</option>
+                    <option value="SUST">Opel</option>
+                    <option value="JnU">Audi</option>
+                    <option value="RU">Audi</option>
+                    <option value="CU">Audi</option>
+                    <option value="KU">Audi</option>
+                    <option value="JnU">Audi</option>
+                    <option value="JnU">Audi</option>
+                    <option value="Biomedical Engineering
+Chemical Engineering
+Computer Science and Engineering
+Electrical and Electronic Engineering
+Industrial and Production Engineering
+Petroleum and Mining Engineering
+Textile Engineering
+               
+               Agro Product Processing Technology
+Climate and Disaster Management
+Environmental Science and Technology
+Nutrition and Food Technology
+               
+               Fisheries and Marine Bioscience
+Genetic Engineering and Biotechnology
+Microbiology
+Pharmacy
+               Nursing and Health Science
+Physical Education and Sports Science
+Physiotherapy and Rehabilitation
+               
+               English
+               
+               Chemistry
+Mathematics
+Physics
+               
+               Accounting and Information Systems
+Finance and Banking
+Management
+Marketing">Audi</option>
+                </select>
+            </div>
+            <div class="information">
+                <label>Name</label>
+                <input>
+            </div>
+            <div class="information">
+                <label>Roll</label>
+                <input>
+            </div>
+            <div class="information">
+                <label>Session</label>
+                <input>
+            </div>
+            <div class="information">
+                <label>Semester</label>
+                <input>
+            </div>
+
+
+        </div>
+        <hr>
+
+        <table id="textbox">
+            <tr>
+                <td>
+                    <input type="button" onclick="addFunction()" value="AddTextbox" />
+                </td>
+            </tr>
+            <tr>
+                <th><label>Course Title</label></th>
+                <th><label>Credit</label></th>
+                <th><label>Earn Credit</label></th>
+                <th><label>Score</label></th>
+            </tr>
+            <tr>
+                <td><input type="text" class="courseTitle" id="courseTitleId2" value="CSE:1101" onclick='this.select()'></td>
+                <td><input type="number" class="courseTitle" id="creditId2" step=".5" value="3.00" onchange="cgpaCalculation()" onclick='this.select()'></td>
+                <td><input type="number" class="courseTitle" id="earnCreditId2" value="3.75" onchange="cgpaCalculation()" onclick='this.select()'></td>
+                <td><input type="number" class="courseTitle" id="scoreId2" value="9.00" onchange="cgpaCalculation()" onclick='this.select()' readonly=""></td>
+                <td><input type="button" class="courseTitle" onclick="removeCell()" value="Delete"></td>
+            </tr>
+        </table>
+        <input type="button" onclick="addFunction()" value="AddTextbox" />
+        <input type="button" onclick="cgpaCalculationPdfDownload()" value="Download" />
+    </fieldset>
+
+    <script src="scripts/customScript.js"></script>
+</body>
+
+</html>
